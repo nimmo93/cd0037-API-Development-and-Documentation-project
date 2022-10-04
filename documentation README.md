@@ -183,20 +183,97 @@
 ## DELETE '/questions/${id}'
 1. Deletes a specified question using the id of the question
 2. Request Arguments: id - integer
-3. Returns: 
-
-POST '/quizzes'
-
-    Sends a post request in order to get the next question
-    Request Body:
-
+3. Returns: An object with deleted question's id, paginated questions, success value, and total number of questions.
+```
+{
+  "deleted": 18, 
+  "questions": [
+    {
+      "answer": "Tom Cruise", 
+      "category": 5, 
+      "difficulty": 4, 
+      "id": 4, 
+      "question": "What actor did author Anne Rice first denounce, then praise in the role of her beloved Lestat?"
+    }, 
+    {
+      "answer": "Maya Angelou", 
+      "category": 4, 
+      "difficulty": 2, 
+      "id": 5, 
+      "question": "Whose autobiography is entitled 'I Know Why the Caged Bird Sings'?"
+    }, 
+    {
+      "answer": "Edward Scissorhands", 
+      "category": 5, 
+      "difficulty": 3, 
+      "id": 6, 
+      "question": "What was the title of the 1990 fantasy directed by Tim Burton about a young man with multi-bladed appendages?"
+    }, 
+    {
+      "answer": "Muhammad Ali", 
+      "category": 4, 
+      "difficulty": 1, 
+      "id": 9, 
+      "question": "What boxer's original name is Cassius Clay?"
+    }, 
+    {
+      "answer": "Brazil", 
+      "category": 6, 
+      "difficulty": 3, 
+      "id": 10, 
+      "question": "Which is the only team to play in every soccer World Cup tournament?"
+    }, 
+    {
+      "answer": "Uruguay", 
+      "category": 6, 
+      "difficulty": 4, 
+      "id": 11, 
+      "question": "Which country won the first ever soccer World Cup in 1930?"
+    }, 
+    {
+      "answer": "George Washington Carver", 
+      "category": 4, 
+      "difficulty": 2, 
+      "id": 12, 
+      "question": "Who invented Peanut Butter?"
+    }, 
+    {
+      "answer": "Lake Victoria", 
+      "category": 3, 
+      "difficulty": 2, 
+      "id": 13, 
+      "question": "What is the largest lake in Africa?"
+    }, 
+    {
+      "answer": "The Palace of Versailles", 
+      "category": 3, 
+      "difficulty": 3, 
+      "id": 14, 
+      "question": "In which royal palace would you find the Hall of Mirrors?"
+    }, 
+    {
+      "answer": "Agra", 
+      "category": 3, 
+      "difficulty": 2, 
+      "id": 15, 
+      "question": "The Taj Mahal is located in which Indian city?"
+    }
+  ], 
+  "success": true, 
+  "total_questions": 20
+}
+```
+## POST '/quizzes'
+1. Sends a post request in order to get the next question
+2. Request Body:
+```
 {
     'previous_questions': [1, 4, 20, 15]
     quiz_category': 'current category'
  }
-
-    Returns: a single new question object
-
+```
+3. Returns: a single new question object
+```
 {
     'question': {
         'id': 1,
@@ -206,32 +283,31 @@ POST '/quizzes'
         'category': 4
     }
 }
-
-POST '/questions'
-
-    Sends a post request in order to add a new question
-    Request Body:
-
+```
+## POST '/questions'
+1. Sends a post request in order to add a new question
+2. Request Body:
+```
 {
-    'question':  'Heres a new question string',
-    'answer':  'Heres a new answer string',
-    'difficulty': 1,
-    'category': 3,
-}
+      "answer": "One", 
+      "category": 2, 
+      "difficulty": 4, 
+      "id": 18, 
+      "question": "How many paintings did Van Gogh sell in his lifetime?"
+    }
+```
+3. Returns: Does not return any new data
 
-    Returns: Does not return any new data
-
-POST '/questions'
-
-    Sends a post request in order to search for a specific question by search term
-    Request Body:
-
+## POST '/questions'
+1. Sends a post request in order to search for a specific question by search term
+2. Request Body:
+```
 {
     'searchTerm': 'this is the term the user is looking for'
 }
-
-    Returns: any array of questions, a number of totalQuestions that met the search term and the current category string
-
+```
+3. Returns: any array of questions, a number of totalQuestions that met the search term and the current category string
+```
 {
     'questions': [
         {
@@ -245,5 +321,5 @@ POST '/questions'
     'totalQuestions': 100,
     'currentCategory': 'Entertainment'
 }
-
+```
 
