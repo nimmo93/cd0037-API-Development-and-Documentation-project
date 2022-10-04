@@ -1,21 +1,43 @@
-Expected endpoints and behaviors
+# Expected endpoints and behaviors
 
-GET '/categories'
+## GET '/categories'
 
     Fetches a dictionary of categories in which the keys are the ids and the value is the corresponding string of the category
     Request Arguments: None
     Returns: An object with a single key, categories, that contains an object of id: category_string key:value pairs.
-
+ ```
 {
-    'categories': { '1' : "Science",
-    '2' : "Art",
-    '3' : "Geography",
-    '4' : "History",
-    '5' : "Entertainment",
-    '6' : "Sports" }
+  "categories": [
+    {
+      "id": 1, 
+      "type": "Science"
+    }, 
+    {
+      "id": 2, 
+      "type": "Art"
+    }, 
+    {
+      "id": 3, 
+      "type": "Geography"
+    }, 
+    {
+      "id": 4, 
+      "type": "History"
+    }, 
+    {
+      "id": 5, 
+      "type": "Entertainment"
+    }, 
+    {
+      "id": 6, 
+      "type": "Sports"
+    }
+  ], 
+  "success": true
 }
+```
 
-GET '/questions?page=${integer}'
+## GET '/questions?page=${integer}'
 
     Fetches a paginated set of questions, a total number of questions, all categories and current category string.
     Request Arguments: page - integer
