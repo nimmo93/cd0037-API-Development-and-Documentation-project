@@ -307,26 +307,19 @@
 }
 ```
 3. Returns: any array of questions, a number of totalQuestions that met the search term and the current category string
-```
- {
-      
-   
-  
-    }, 
+``` 
 {
     'questions': [
         {
-            
-            "id": 13,
-            'question': 'This is a question',
             "answer": "Lake Victoria", 
-            "question": "What is the largest lake in Africa?"
-            "difficulty": 2,
             "category": 3, 
+            "difficulty": 2,
+            "id": 13,
+            "question": "What is the largest lake in Africa?"
         },
     ],
-    'totalQuestions': 100,
-    'currentCategory': 'Entertainment'
+    'totalQuestions': 20,
+    'currentCategory': 'Geography'
 }
 ```
 
