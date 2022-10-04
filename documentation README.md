@@ -145,25 +145,40 @@
   "total_questions": 21
 }
 ```
-GET '/categories/${id}/questions'
-
-    Fetches questions for a cateogry specified by id request argument
-    Request Arguments: id - integer
-    Returns: An object with questions for the specified category, total questions, and current category string
-
+## GET '/categories/${id}/questions'
+1. Fetches questions for a cateogry specified by id 
+2. Request Arguments: id - integer
+3. Returns: An object with questions for the specified category, total questions, and current category string
+```
 {
-    'questions': [
-        {
-            'id': 1,
-            'question': 'This is a question',
-            'answer': 'This is an answer',
-            'difficulty': 5,
-            'category': 4
-        },
-    ],
-    'totalQuestions': 100,
-    'currentCategory': 'History'
+  "current_category": 2, 
+  "questions": [
+    {
+      "answer": "Mona Lisa", 
+      "category": 2, 
+      "difficulty": 3, 
+      "id": 17, 
+      "question": "La Giaconda is better known as what?"
+    }, 
+    {
+      "answer": "One", 
+      "category": 2, 
+      "difficulty": 4, 
+      "id": 18, 
+      "question": "How many paintings did Van Gogh sell in his lifetime?"
+    }, 
+    {
+      "answer": "Jackson Pollock", 
+      "category": 2, 
+      "difficulty": 2, 
+      "id": 19, 
+      "question": "Which American artist was a pioneer of Abstract Expressionism, and a leading exponent of action painting?"
+    }
+  ], 
+  "success": true, 
+  "total_questions": 3
 }
+
 ```
 DELETE '/questions/${id}'
 
