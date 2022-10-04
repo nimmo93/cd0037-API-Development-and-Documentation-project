@@ -15,6 +15,10 @@ class FormView extends Component {
   }
 
   componentDidMount() {
+    this.getCategories();
+  }
+
+    getCategories = () => {
     $.ajax({
       url: `/categories`, //TODO: update request URL
       type: 'GET',
