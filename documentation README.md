@@ -303,19 +303,26 @@
 2. Request Body:
 ```
 {
-    'searchTerm': 'this is the term the user is looking for'
+    'searchTerm': '"What is the largest lake in Africa?'
 }
 ```
 3. Returns: any array of questions, a number of totalQuestions that met the search term and the current category string
 ```
+ {
+      
+   
+  
+    }, 
 {
     'questions': [
         {
-            'id': 1,
+            
+            "id": 13,
             'question': 'This is a question',
-            'answer': 'This is an answer',
-            'difficulty': 5,
-            'category': 5
+            "answer": "Lake Victoria", 
+            "question": "What is the largest lake in Africa?"
+            "difficulty": 2,
+            "category": 3, 
         },
     ],
     'totalQuestions': 100,
